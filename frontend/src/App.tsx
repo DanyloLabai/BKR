@@ -19,7 +19,10 @@ function App() {
         />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/analytics" element={<AnalyticsPage />} />
+        <Route
+          path="/analytics"
+          element={token ? <AnalyticsPage /> : <Navigate to="/login" replace />}
+        />
 
         <Route path="/dashboard" element={<HomePage />} />
         <Route path="/inventory" element={<InventoryPage />} />
